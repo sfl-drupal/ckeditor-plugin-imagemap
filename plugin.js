@@ -26,9 +26,9 @@ CKEDITOR.plugins.add('imagemap',
   {
     var pluginName = 'imagemap';
     //note: For IE 7+8 support, uncomment this line and install excanvas
-    CKEDITOR.scriptLoader.load(CKEDITOR.getUrl('plugins/imagemap/excanvas.compiled.js')); 
-    CKEDITOR.scriptLoader.load(CKEDITOR.getUrl('plugins/imagemap/imagemap.js')); 
-    CKEDITOR.scriptLoader.load(CKEDITOR.getUrl('plugins/imagemap/jquery.simplemodal.1.4.4.min.js')); 
+    CKEDITOR.scriptLoader.load(CKEDITOR.getUrl( this.path + 'excanvas.compiled.js')); 
+    CKEDITOR.scriptLoader.load(CKEDITOR.getUrl( this.path + 'imagemap.js')); 
+    CKEDITOR.scriptLoader.load(CKEDITOR.getUrl( this.path + 'jquery.simplemodal.1.4.4.min.js')); 
 
     editor.ui.addButton( 'ImageMap',
       {
