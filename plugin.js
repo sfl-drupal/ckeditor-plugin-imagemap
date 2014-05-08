@@ -65,11 +65,16 @@ CKEDITOR.plugins.add('imagemap',
 var processingInstance;
 
 function initImageMapEditor(editor,selected){
-    var selectEquipement = '<select id="imageMapHref" style="width: 190px;" onchange="processingInstance.updateArea();">';
-    for (var i = 0; i < CKEDITOR.equipements.length; i++) {
-      selectEquipement += '<option value="'+CKEDITOR.equipements[i].nid+'">'+CKEDITOR.equipements[i].label+'</option>';
-    };
-    selectEquipement += '/<select>';
+    
+    var href =  'URL: <input type="text" id="imageMapHref" style="width:190px;" onkeyup="processingInstance.updateArea();">';
+    if(CKEDITOR.equipements.length > 0){
+      var selectEquipement = 'Équipement: <select id="imageMapHref" style="width:190px;" onchange="processingInstance.updateArea();">';
+      for (var i = 0; i < CKEDITOR.equipements.length; i++) {
+        selectEquipement += '<option value="'+CKEDITOR.equipements[i].nid+'">'+CKEDITOR.equipements[i].label+'</option>';
+      };
+      selectEquipement += '/<select>';
+      var href = selectEquipement;
+    }
 
   jQuery.modal("<div style='width: 1150px; height:600px; border: 1px solid black; background: white;' id='imageMapModalDiv'>\
 <div id='imageMapCanvasDiv' style='background: grey; width: 830px; height: 600px; border-right: 1px solid black; float: left; overflow: auto;'>\
@@ -87,7 +92,7 @@ function initImageMapEditor(editor,selected){
     <button onclick='processingInstance.addArea(\"\",\"\",\"New\",\"poly\",\"\");'>Polygon</button>\
     <table style='display: none; border: none;' id='imageMapRegionEdit'>\
       <tr><td colspan=2>\
-      Equipement: "+selectEquipement+"\
+      "+href+"\
       </td></tr><td>\
       Title: <input type='text' id='imageMapTitle' style='width: 60px;' onkeyup='processingInstance.updateArea();'>\
       </td><td>\
