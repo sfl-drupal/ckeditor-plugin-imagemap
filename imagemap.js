@@ -187,7 +187,7 @@ function sketchProc(p){
     } else {
       //console.log("existing imagemap found:" + mapName);
 
-//      console.log(CKEDITOR.dom.element.createFromHtml(editor.getData()));
+      //console.log(CKEDITOR.dom.element.createFromHtml(editor.getData()));
       maps = image.getDocument().getElementsByTag("map").$;
       for (i = 0; i < maps.length; i++) { // searching existing maps
         if (maps[i].getAttribute('name')==mapName.replace("#","")){ // found our map
@@ -263,6 +263,8 @@ function sketchProc(p){
     for(var i in components[components.length-1].coords) components[components.length-1].coords[i]=parseFloat(components[components.length-1].coords[i]);
     jQuery("#imageMapAreas").append("<option value='"+(components.length-1)+"'>"+shape+": "+title+"</option>");
     select(components.length-1);
+
+    this.updateArea();
   }
 
   p.saveToHtml=function(){

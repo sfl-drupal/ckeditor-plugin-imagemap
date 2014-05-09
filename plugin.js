@@ -87,9 +87,9 @@ function initImageMapEditor(editor,selected){
   <div style='clear: both;'>\
     <button onclick='processingInstance.saveToHtml();'>Save HTML</button><br>\
     <button onclick='processingInstance.removeArea();'>Delete Area</button><br>\
-    <button onclick='processingInstance.addArea(\"\",\"\",\"New\",\"circle\",\"20,20,10\");'>Circle</button>\
-    <button onclick='processingInstance.addArea(\"\",\"\",\"New\",\"rect\",\"20,20,40,40\");'>Box</button>\
-    <button onclick='processingInstance.addArea(\"\",\"\",\"New\",\"poly\",\"\");'>Polygon</button>\
+    <button onclick='processingInstance.addArea(\"\",\"\",\"\",\"circle\",\"20,20,10\");'>Circle</button>\
+    <button onclick='processingInstance.addArea(\"\",\"\",\"\",\"rect\",\"20,20,40,40\");'>Box</button>\
+    <button onclick='processingInstance.addArea(\"\",\"\",\"\",\"poly\",\"\");'>Polygon</button>\
     <table style='display: none; border: none;' id='imageMapRegionEdit'>\
       <tr><td colspan=2>\
       "+href+"\
